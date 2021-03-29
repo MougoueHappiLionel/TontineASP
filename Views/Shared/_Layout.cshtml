@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="@Url.Content("~/Contents/Style.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Script/fontawesome.js")"></script>
+</head>
+<body>
+    <input type="checkbox" id="check" />
+    <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+        <header>Mutualité</header>
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i>Accueil</a></li>
+            <li><a href="#"><i class="fas fa-user"></i>Profil</a></li>
+            <li><a href="@Url.Action("Reunion", "Connect")"><i class="fas fa-stream"></i>Reunion</a></li>
+            <li><a href="#"><i class="fas fa-calendar-week"></i>Evènements</a></li>
+            <li><a href="#"><i class="fas fa-box"></i>Caisse</a></li>
+            <li><a href="#"><i class="fas fa-question-circle"></i>About</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i>Contact</a></li>
+        </ul>
+    </div>
+
+    <section>
+        <div class="content-nav-bar">
+            <div class="search-bar">
+                <span class="fas fa-search"></span>
+                <input type="search" placeholder="Rechercher" />
+            </div>
+            <button type="button" class="btn-connect" onclick="@Url.Action("Login", "Connect")">SE CONNECTER</button>
+            <div class="user-wrapper">
+                <img src="@Url.Content("~/Contents/Images/lionel.png")" alt="" height="30px" width="30px" />
+                <div>
+                    <h4>User Name</h4>
+                </div>
+            </div>
+        </div>
+
+        @RenderBody();
+    </section>
+</body>
+</html>
+

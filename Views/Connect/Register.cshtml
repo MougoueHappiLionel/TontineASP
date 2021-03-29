@@ -1,0 +1,91 @@
+﻿@model TontineASP.Models.RegisterModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="@Url.Content("~/Script/fontawesome.js")" crossorigin="anonymous"></script>
+    <link href="@Url.Content("~/Contents/Register.css")" rel="stylesheet" />
+    <title>Formulaire d'enregistrement</title>
+</head>
+<body>
+    <div class="container">
+        <div class="barnav">
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Se connecter</a></li>
+                <li><a href="#">A propos</a></li>
+                <li><a href="#">Nous Contacter</a></li>
+            </ul>
+        </div>
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form action="@Url.Action("Register", "Connect")" method="post" class="sign-in-form">
+                    @if (Model != null && Model.IsError)
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            @Model.Message
+                        </div>
+                    }
+                    <h2 class="title">S'enregistrer</h2>
+                    <div class="input-field">
+                            <i class="fas fa-user"></i>
+                            <input name="Fullname" id="fullname" value="@(Model != null ? Model.Fullname : "")" type="text" placeholder="Nom d'utilisateur" />
+                    </div>
+                    <div class="input-field">
+                            <i class="fas fa-envelope"></i>
+                            <input name="Email" id="email" value="@(Model != null ? Model.Email: "")" type="email" placeholder="Email" />
+                    </div>
+                    <div class="input-field">
+                            <i class="fas fa-lock"></i>
+                            <input name="Password" id="password" value="@(Model != null ? Model.Password : "")" type="password" placeholder="Mot de passe" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-phone"></i>
+                        <input  name="Telephone" id="telephone" value="@(Model != null ? Model.Telephone.ToString() : "")" type="tel" placeholder="Numéro de Télephone" />
+                    </div>
+                    <input type="submit" class="btn solid" value="S'enregistrer" />
+                    <p class="social-text">Ou s'enregistrer à partir d'une autre plateforme</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Vous avez déjà un compte ?</h3>
+                    <p>
+                       Si vous êtes déjà inscrits dans notre site web 
+                        cliquez sur le bouton ci-dessous pour vous connecter
+                    </p>
+                    <button class="btn transparent" id="sign-up-btn">
+                        Se connecter
+                    </button>
+                </div>
+                <img src="@Url.Content("~/Contents/Images/register.svg")" class="image" alt="" />
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<div>
+    <h1>Home Page</h1><br /><br />
+    <h3>@(Model != null && !string.IsNullOrEmpty(Model.Fullname) ? "Bienvenue " + Model.Fullname :"")</h3>
+</div>

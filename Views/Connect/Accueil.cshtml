@@ -1,0 +1,50 @@
+﻿@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Accueil</title>
+    <link href="@Url.Content("~/Contents/Accueil.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Script/fontawesome.js")" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="hero">
+        <div class="nav-bar">
+            <div class="nav-logo">
+
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href=""></a>Accueil</li>
+                    <li><a href=""></a>Mobile</li>
+                    <li><a href=""></a>A propos</li>
+                    <li><a href=""></a>Nous contacter</li>
+                </ul>
+                <button type="button" class="btn" onclick="location.href = '@Url.Action("Login", "Connect")'">Se connecter</button>
+            </div>
+        </div>
+        <div class="banner-title">
+            <h1>
+                Bienvenue dans cette grande communité de mutualité, <span> partagez vos moments<br/>et vos idées</span> avec le reste du monde
+            </h1>
+            <button type="button" class="btn"  onclick="location.href = '@Url.Action("Register", "Connect")'">Inscrivez vous !</button>
+        </div>
+        <div class="vertical-bar">
+            <div class="search-icon">
+                <i class="fas fa-th-list"></i>
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="social-icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
